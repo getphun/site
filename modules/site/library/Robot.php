@@ -17,7 +17,7 @@ class Robot
             'page'          => $dis->router->to('siteHome'),
             'published'     => date('c', strtotime($dis->config->install)),
             'description'   => 'Standart homepage description',
-            'updated'       => null,
+            'updated'       => date('c'),
             'title'         => $dis->config->name . ' Homepage'
         ];
         
