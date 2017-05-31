@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <?php if(module_exists('site-meta')): ?>
+    <?= $this->meta->head($home); ?>
+    <?php endif; ?>
+</head>
+<body>
+    <?php if(module_exists('site-meta')): ?>
+    <?= $this->meta->foot($home); ?>
+    <?php endif; ?>
+</body>
+</html>

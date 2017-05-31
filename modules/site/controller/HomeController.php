@@ -7,13 +7,16 @@
  */
 
 namespace Site\Controller;
+use Site\Meta\Home;
 
 class HomeController extends \SiteController
 {
     public function indexAction(){
         $params = [
-            'greeting' => 'We\'re about to get some phun'
+            'home' => new \stdClass()
         ];
+        
+        $params['home']->meta = Home::index();
         
         $this->respond('index', $params, 10);
     }
