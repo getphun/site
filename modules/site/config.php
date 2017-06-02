@@ -11,6 +11,7 @@ return [
     '__version' => '0.0.1',
     '__git' => 'https://github.com/getphun/site',
     '__files' => [
+        'modules/site/_db'        => ['install','remove','update'],
         'modules/site/config.php' => ['install','remove','update'],
         'modules/site/library'    => ['install','remove','update'],
         'modules/site/meta'       => ['install','remove','update'],

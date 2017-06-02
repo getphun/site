@@ -44,6 +44,10 @@ class Home
             'canonical'     => $page_url
         ];
         
+        // Global RSS Feed
+        if(module_exists('robot'))
+            $home->_metas['feed'] = $dis->router->to('robotFeedXML');
+        
         // SCHEMA Organization
         $schema = [
             '@context'      => 'http://schema.org',
@@ -120,11 +124,13 @@ class Home
         ];
         
         // SCHEMA Website Search Action
-//         $schema['potentialAction'] = [
-//             '@type'             => 'SearchAction',
-//             'target'            => $page_url . '?q={search_term_string}',
-//             'query-input'       => 'required name=search_term_string'
-//         ];
+        if($dis->router->exists('siteSearch')){
+            $schema['potentialAction'] = [
+                '@type'             => 'SearchAction',
+                'target'            => $dis->router->to('siteSearch') . '?q={search_term_string}',
+                'query-input'       => 'required name=search_term_string'
+            ];
+        }
 
         $home->_schemas[] = $schema;
         

@@ -45,6 +45,7 @@ Modul ini datang dengan beberapa file logo sebagai berikut:
 
 Silahkan ganti logo-logo tersebut agar sesuai dengan logo aplikasi.
 
-## TODO
+## Schema Pencarian
 
-1. Search page schema
+Jika router dengan nama `siteSearch` ada, maka schema.org halaman depan akan menggunakan
+schema tersebut untuk schema `potentialAction->SearchAction`.
