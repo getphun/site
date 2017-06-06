@@ -9,6 +9,7 @@
 class SiteController extends Controller{
     
     public function notFoundAction(){
+        $this->res->setStatus(404);
         $this->respond('404');
     }
     
