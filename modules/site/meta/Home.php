@@ -46,7 +46,7 @@ class Home
         
         // Global RSS Feed
         if(module_exists('robot'))
-            $home->_metas['feed'] = $dis->router->to('robotFeedXML');
+            $home->_metas['feed'] = $dis->router->to('robotFeed');
         
         // SCHEMA Organization
         $schema = [
