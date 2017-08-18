@@ -33,6 +33,17 @@ return [
         ],
         'files' => []
     ],
+    '_routes' => [
+        'site' => [
+            '404' => [
+                'handler' => 'Site::notFound'
+            ],
+            'siteHome' => [
+                'rule' => '/',
+                'handler' => 'Site\\Controller\\Home::index'
+            ]
+        ]
+    ],
     'robot' => [
         'sitemap' => [
             'site' => 'Site\\Library\\Robot::sitemap'
