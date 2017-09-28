@@ -21,7 +21,9 @@ return [
     ],
     '__dependencies' => [
         '/robot',
-        '/site-meta'
+        '/site-meta',
+        '/upload',
+        '/media'
     ],
     '_services' => [],
     '_autoload' => [
@@ -41,6 +43,11 @@ return [
             'siteHome' => [
                 'rule' => '/',
                 'handler' => 'Site\\Controller\\Home::index'
+            ],
+            'siteFileUpload' => [
+                'module' => 'upload',
+                'rule' => '/comp/upload',
+                'handler' => 'Upload\\Controller\\Main::upload'
             ]
         ]
     ],

@@ -12,6 +12,7 @@ Modul ini datang dengan beberapa file logo sebagai berikut:
 
 1. /theme/site/static/logo/500x500.png
 1. /theme/site/static/logo/200x60.png
+1. /theme/site/static/logo/192x192.png
 1. /theme/site/static/logo/114x114.png
 1. /theme/site/static/logo/100x100.png
 1. /theme/site/static/logo/72x72.png
