@@ -22,5 +22,23 @@ Silahkan ganti logo-logo tersebut agar sesuai dengan logo aplikasi.
 
 ## Schema Pencarian
 
-Jika router dengan nama `siteSearch` ada, maka schema.org halaman depan akan menggunakan
-schema tersebut untuk schema `potentialAction->SearchAction`.
+Untuk menambahkan schema.org `potentialAction->SearchAction`, silahkan tambahkan
+konfigurasi seperti di bawah pada konfigurasi aplikasi:
+
+```php
+<?php
+
+return [
+    'name' => 'Phun',
+    ...,
+    'sitesearch' => [
+        'router' => 'siteSearch',
+        'params' => [],
+        'field'  => 'q'
+    ]
+];
+```
+
+Dimana `router` adalah nama router yang akan digunakan untuk menentukan router
+yang menangani pencarian. Parameter `params` untuk tambahan parameter yang akan
+dikirim ke router builder, dan `field` untuk nama search field.

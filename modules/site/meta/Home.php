@@ -124,10 +124,17 @@ class Home
         ];
         
         // SCHEMA Website Search Action
-        if($dis->router->exists('siteSearch')){
+        $search = $dis->config->sitesearch ?? null;
+        if($search){
+            $search_router = $search['router'];
+            $search_params = $search['params'] ?? [];
+            $search_field  = $search['field'] ?? 'q';
+            
+            $search_url = $dis->router->to($search_router, $search_params);
+            
             $schema['potentialAction'] = [
                 '@type'             => 'SearchAction',
-                'target'            => $dis->router->to('siteSearch') . '?q={search_term_string}',
+                'target'            => $search_url . '?' . $search_field . '={search_term_string}',
                 'query-input'       => 'required name=search_term_string'
             ];
         }
